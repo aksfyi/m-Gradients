@@ -73,7 +73,7 @@ function generaterandom()
         fullcard+=card;
 
     }
-    document.getElementById('randm').innerHTML =`<div class="flexbox" data-aos="fade-up" id="randm" style="display: flex;flex-wrap: wrap;justify-content: center;align-items: center">
+    document.getElementById('randm').innerHTML =`<div class="flexbox" data-aos="fade-up" style="display: flex;flex-wrap: wrap;justify-content: center;align-items: center">
     ${fullcard}</div>`
 }
 
