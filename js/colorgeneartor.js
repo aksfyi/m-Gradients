@@ -1,7 +1,7 @@
-
+var datacolors;
 async function colorgen()
 {
-    const url = "/colors.json";
+    const url = "colors.json";
     const response = await fetch(url);
     const data= await response.json();
     return data;
@@ -13,8 +13,17 @@ function getrandom(min,max)
 }
 
 colorgen().then((data)=>{
-    var lightcolors = data['light']
-    var darkcolors = data['dark']
+   
+    datacolors = data;
+    generaterandom()
+
+});
+
+
+function generaterandom()
+{
+    var lightcolors = datacolors['light']
+    var darkcolors = datacolors['dark']
     var allcolors = lightcolors.concat(darkcolors)
     
     var rand1 = []
@@ -64,12 +73,9 @@ colorgen().then((data)=>{
         fullcard+=card;
 
     }
-    document.getElementById('randm').innerHTML = fullcard
-
-});
-
-
-
+    document.getElementById('randm').innerHTML =`<div class="flexbox" data-aos="fade-up" id="randm" style="display: flex;flex-wrap: wrap;justify-content: center;align-items: center">
+    ${fullcard}</div>`
+}
 
 
 

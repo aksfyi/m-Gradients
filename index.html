@@ -27,6 +27,19 @@
 {
     border-radius: 5px;
 }
+.loader
+        {
+          background-color: white;
+          width: 100%;
+          top: 0;
+          left: 0;
+          height: 100%;
+          z-index: 9999;
+          position: fixed;
+          display: flex;
+         align-items: center;
+         justify-content: center;
+        }
 </style>
 </head>
 <body>
@@ -47,18 +60,34 @@
       <div style="margin-bottom: 1%">
         <span style="font-family: 'Righteous', cursive;">Click on the card for hex code</span>
         </div>
-    <a class="waves-effect waves-light btn blue lighten-3 black-text" onclick=window.location.reload(true)>Generate new set</a><br>
+    <a class="waves-effect waves-light btn blue lighten-3 black-text" onclick=generaterandom()>Generate new set</a><br>
         </div>
+       
 
 
 </div>
+</div>
+<div class="loader">
+  <div class="spinnera">
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-red-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </center>
-<div class="container" data-aos="fade-up">
+<div class="container">
     <div class="row">
-        <div class="flexbox" id="randm" style="display: flex;flex-wrap: wrap;justify-content: center;align-items: center">
-           
-      </div>
+        
     </div>
     
     <div class="last">
@@ -70,7 +99,7 @@
 <center>
 
 <div style="margin: 1%">
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Hello ! Check this out ! " data-url="http://bit.ly/m_gradients" data-hashtags="uidesign" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Hello ! Check this out ! " data-url="http://m-gradients.netlify.app" data-hashtags="uidesign" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br>
 <a class="waves-effect waves-light btn blue lighten-3 black-text" href="#">Scroll to top</a><br>
 
 </div></center>
@@ -120,5 +149,12 @@
     clipboard.on('error', function(e) {
         console.log(e);
     });
+</script>
+<script type="text/javascript">
+  $(window).on("load", function() {
+    $(".loader").fadeOut(2000);
+
+
+  });
 </script>
 </html>
